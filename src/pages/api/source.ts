@@ -10,6 +10,6 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
   })
 
    return res.status(201).json({
-      data:response
+      data:(await response).data
    })
 }
