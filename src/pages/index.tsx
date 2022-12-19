@@ -4,7 +4,7 @@ import { api } from '../services/api'
 export default function Home() {
 
   async function handleRe() {
-    const response = await api.get(`/source`)
+    const response = await api.get(`/api/source`)
 
     console.log(response.data)
   }
