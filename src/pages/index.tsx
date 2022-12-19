@@ -23,14 +23,6 @@ export default function Home(data: any) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = axios.get('https://api.apilayer.com/world_news/extract-news?url={url}&analyze={analyze}', {
-    headers: {
-      'apikey': process.env.SECRET_API_KEY,
-    },
-    
-  })
-
-  const data = (await response).data;
 
   return {
     props: {
