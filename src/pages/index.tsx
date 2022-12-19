@@ -10,19 +10,27 @@ export default function Home(data: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className=''>
+      <div className=''>
         oi
 
         <button onClick={() => console.log(data)} 
           className='p-4 rounded-full px-8 hover:brightness-50 duration-300 bg-blue-600 text-xl font-semibold text-gray-50'>
           CLique em min
         </button>
-      </main>
+      </div>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const response = axios.get(`https://api.apilayer.com/world_news/extract-news?url=${process.env.URL}&analyze=true`, {
+    headers: {
+      'apikey': process.env.SECRET_API_KEY,
+    },
+    
+  })
+
+  const data = (await response).data;
 
   return {
     props: {
