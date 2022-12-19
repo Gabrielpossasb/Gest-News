@@ -30,6 +30,8 @@ export const getStaticProps: GetStaticProps = async () => {
     
   })
 
+  console.log((await response).data)
+
   const data = (await response).data;
 
   return {
