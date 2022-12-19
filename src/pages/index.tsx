@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { GetServerSideProps, GetStaticProps } from 'next'
 import Head from 'next/head'
 import { api } from '../services/api'
 
@@ -22,7 +22,7 @@ export default function Home(data: any) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const response = api.get(`https://api.apilayer.com/world_news/extract-news?url=${process.env.URL}&analyze=true`, {
     headers: {
       'apikey': process.env.SECRET_API_KEY,
