@@ -76,6 +76,7 @@ export default function Home() {
 
   async function handleRe(e: MouseEvent) {
     e.preventDefault()
+
     const response = await api.get(`/api/source`)
 
     setNoticias(response.data)
@@ -84,7 +85,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>HOME | GEST FULL</title>
+        <title>Home | Gest News</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -105,32 +106,37 @@ export default function Home() {
         </header>
 
         <div className='flex flex-col px-20 py-10'>
-          
 
-          <div className='flex w-full'>
-            <div ref={sliderRef} className="keen-slider">
-              { noticias.data?.items?.map((val, index) => { 
-                  const linkImage = ( 
-                    `https://agenciadenoticias.ibge.gov.br/`
-                    + 
-                    `${val.imagens.slice( val.imagens.search('image_fulltext') + 17, val.imagens.search('float_fulltext') - 3 )}`
-                  ); 
-                                
-                return (
-                <div className={`keen-slider__slide number-slide${index + 1}`}>
-                  <div className='flex flex-1 bg-red-50 z-20 rounded-xl overflow-hidden shadow-box m-4'>
-                    <div className='flex flex-col w-[40%] shadow-redShadeRight z-20'>
-                      <text className='text-xl text-center p-4 px-10 bg-red-700 text-gray-50 font-semibold shadow-bottomShade'>{val.titulo}</text>
-                      <text className='font-medium text-gray-800 px-8 my-6'>{val.introducao}</text>
+          { (!!noticias.data) ? (
+            <div className='flex w-full'>
+              <div ref={sliderRef} className="keen-slider">
+                { noticias.data.items.map((val, index) => { 
+                    const linkImage = ( 
+                      `https://agenciadenoticias.ibge.gov.br/`
+                      + 
+                      `${val.imagens.slice( val.imagens.search('image_fulltext') + 17, val.imagens.search('float_fulltext') - 3 )}`
+                    ); 
+                                  
+                  return (
+                  <div key={val.id} className={`keen-slider__slide number-slide${index + 1}`}>
+                    <div className='flex flex-1 bg-red-50 z-20 rounded-xl overflow-hidden shadow-box m-4'>
+                      <div className='flex flex-col w-[40%] shadow-redShadeRight z-20'>
+                        <text className='text-xl text-center p-4 px-10 bg-red-700 text-gray-50 font-semibold shadow-bottomShade'>{val.titulo}</text>
+                        <text className='font-medium text-gray-800 px-8 my-6'>{val.introducao}</text>
+                      </div>
+
+                      <img src={linkImage} className='shadow-insetFade w-[60%]'/>
                     </div>
-
-                    <img src={linkImage} className='shadow-insetFade w-[60%]'/>
                   </div>
-                </div>
-                
-              )})}
+                  
+                )})}
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className='w-full h-[300px] flex items-center justify-center text-3xl font-semibold animate-bounce'>
+              Loading...
+            </div>
+          )} 
 
           <div className='flex gap-6 p-8 w-full relative items-center'>
             <button onClick={(e) => handleRe(e)} 
