@@ -6,9 +6,15 @@ import { FiArrowRightCircle, FiRotateCw, FiChevronRight } from "react-icons/fi";
 import { useKeenSlider } from "keen-slider/react"
 
 import "keen-slider/keen-slider.min.css"
+import { Pagination } from '../components/Pagination/Pagination';
 
 interface Noticias {
   data: {
+    totalPages: number,
+    nextPage: number,
+    previusPages: number,
+    page: number,
+    count: number,
     items: [
       {
         id: number,
@@ -16,6 +22,7 @@ interface Noticias {
         introducao: string,
         imagens: string,
         link: string,
+        data_publicacao: string,
       },
     ]
   }
@@ -78,6 +85,16 @@ export default function Home() {
     e.preventDefault()
 
     const response = await api.get(`/api/source`)
+
+    setNoticias(response.data)
+  }
+  
+  async function handlePagination(nextPgae: number) {
+    const response = await api.post(`/api/source`, {
+      headers: {
+        nextPage: nextPgae
+      }
+    })
 
     setNoticias(response.data)
   }
@@ -155,6 +172,13 @@ export default function Home() {
             
           </div>
 
+          <Pagination 
+            totalCountOfRegisters={noticias.data.totalPages}
+            currentPage={noticias.data.page}
+            onPageChange={(e) => handlePagination(e)} 
+            registersPerPage={10}
+          />
+
           <div className='grid grid-cols-2 gap-28 mt-10'>
             { noticias.data?.items?.map((val) => { 
               const linkImage = ( 
@@ -164,7 +188,7 @@ export default function Home() {
               ); 
 
               return (
-              <div className='flex flex-col gap-4 items-center shadow-box rounded-xl bg-gray-50 overflow-hidden' key={val.id}>
+              <div className='flex flex-col gap-4 pb-4 items-center shadow-box rounded-xl bg-gray-50 overflow-hidden' key={val.id}>
                 <text className='text-xl text-center p-4 px-10 bg-red-700 text-gray-50 font-semibold shadow-bottomShade'>{val.titulo}</text>
                 <text className='font-medium text-gray-800 px-8 my-2'>{val.introducao}</text>
                 
@@ -175,40 +199,18 @@ export default function Home() {
 
                 <img src={linkImage} className='w-full mt-auto shadow-redShade'/>
                 
-                <Link href={val.link} target={'_blank'} className='hover:bg-gray-100/60 text-gray-400 p-2 flex gap-2 items-center px-6 rounded-full text-center mb-4 duration-300 hover:text-red-600 font-semibold underline underline-offset-4'>
-                  Link da Reportagen
-                  <FiArrowRightCircle size={20}/>
-                </Link>
+                <div className='flex w-full px-8 justify-between items-center text-gray-400'>
+                  <Link href={val.link} target={'_blank'} className='hover:bg-gray-100/60 p-2 flex gap-2 items-center px-6 rounded-full text-center duration-300 hover:text-red-600 font-semibold underline underline-offset-4'>
+                    Link da Reportagen
+                    <FiArrowRightCircle size={20}/>
+                  </Link>
+                  <text className='font-bold text-xl text-red-500 [textShadow:_1px_1px_2px_#be6868]'>{val.data_publicacao}</text>
+                </div>
               </div>
             )})}
           </div>
         </div>
       </div>
     </>
-  )
-}
-
-function Arrow(props: {
-  disabled: boolean
-  left?: boolean
-  onClick: (e: any) => void
-}) {
-  const disabeld = props.disabled ? " arrow--disabled" : ""
-  return (
-    <svg
-      onClick={props.onClick}
-      className={`arrow ${
-        props.left ? "arrow--left" : "arrow--right"
-      } ${disabeld}`}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-    >
-      {props.left && (
-        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-      )}
-      {!props.left && (
-        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-      )}
-    </svg>
   )
 }
