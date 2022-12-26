@@ -34,6 +34,11 @@ export default function Notices({data}: NoticiesData) {
 					)})}
 
 					<text className='font-medium text-gray-800 px-8 my-2'>{val.abstract}</text>
+
+					<div className="p-2 px-6 flex gap-4 text-xl font-medium">
+						<text className="text-red-600">By:</text>
+						<text className="text-gray-800">{val.byline}</text>
+					</div>
 				
 					<button onClick={() => setNoticeOpen(!noticeOpen)} className='flex gap-2 w-36 p-2 px-4 absolute bottom-2 bg-gray-50 rounded-full items-center font-bold text-red-600 hover:bg-gray-100 duration-300'>
 						{ !noticeOpen ? (
