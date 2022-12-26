@@ -71,8 +71,8 @@ export default function Carroussel({data}: NoticiesData) {
                               </Link>
                            </div>
 
-                           { val.multimedia.map((img, imgIndex) => { return imgIndex === 0 && (
-                              <Image alt={img.caption} height={700} width={1200} src={img.url} className='shadow-insetFade bg-cover sm:w-[60%] max-h-[400px]'/>
+                           { val.multimedia?.map((img, imgIndex) => { return imgIndex === 0 && (
+                              <Image key={index} alt={img.caption} height={700} width={1200} src={img.url} className='shadow-insetFade bg-cover sm:w-[60%] max-h-[400px]'/>
                            )})}
 
                         </div>
