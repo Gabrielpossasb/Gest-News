@@ -2,9 +2,9 @@ import { PaginationItem } from "./PaginationItem";
 
 interface PaginationProps {
    totalCountOfRegisters: number;
-   registersPerPage: number;
-   currentPage: number;
-   onPageChange: (page: number) => void;
+   registersPerPage ? : number;
+   currentPage ? : number;
+   onPageChange : (page: number) => void;
 }
 
 const siblingsCount = 2;
@@ -20,7 +20,7 @@ function generatPagesArray(from: number, to: number) {
 export function Pagination({
    totalCountOfRegisters,
    registersPerPage = 10,
-   currentPage = 1,
+   currentPage = 3,
    onPageChange
 }: PaginationProps) {
    const lastPage = Math.floor(totalCountOfRegisters / registersPerPage);
@@ -34,10 +34,7 @@ export function Pagination({
       : []
 
    return(
-      <div className="flex flex-col gap-5 justify-center items-center text-gray-800">
-         <div className="text-lg">
-            <strong>0</strong> - <strong>10</strong> de <strong>100</strong>
-         </div>
+      <div className="flex gap-5 justify-center mt-10 items-center text-gray-800">
          <div className="flex gap-4 text-red-600 font-semibold items-center">
 
             { currentPage > (1 + siblingsCount) && (
