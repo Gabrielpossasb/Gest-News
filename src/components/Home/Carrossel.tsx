@@ -51,15 +51,15 @@ export default function Carroussel({data}: NoticiesData) {
    return (
       <>
          { (!!data) ? (
-            <div className='flex w-full ]'>
+            <div className='flex w-full max-w-7xl '>
                <div ref={sliderRef} className="keen-slider">
                   { data.results.map((val, index) => { return index <= 8 && (
                      <div key={index} className={`keen-slider__slide number-slide${index + 1}`}>
 
-                        <div className='flex flex-col sm:flex-row flex-1 bg-red-50 z-20 rounded-xl overflow-hidden shadow-box m-8'>
+                        <div className='flex flex-col lg:flex-row flex-1 z-20 rounded-xl overflow-hidden shadow-box m-8 max-h-[400px] sm:max-h-[600px]'>
                            
-                           <div className='flex flex-col sm:w-[40%] shadow-redShadeRight z-20'>
-                              <text className='text-xl text-center p-4 px-10 bg-red-700 text-gray-50 font-semibold shadow-bottomShade'>{val.title}</text>
+                           <div className='flex flex-col lg:w-[40%] items-center shadow-redShadeRight z-20'>
+                              <text className='text-xl text-center p-4 px-10 w-full bg-red-700 text-gray-50 font-semibold shadow-bottomShade'>{val.title}</text>
                               
                               { isDesktop && (
                                  <text className='font-medium text-gray-800 px-8 my-6'>{val.abstract}</text>
@@ -72,7 +72,7 @@ export default function Carroussel({data}: NoticiesData) {
                            </div>
 
                            { val.multimedia?.map((img, imgIndex) => { return imgIndex === 0 && (
-                              <Image key={index} alt={img.caption} height={700} width={1200} src={img.url} className='shadow-insetFade bg-cover sm:w-[60%] max-h-[400px]'/>
+                              <Image key={index} alt={img.caption} height={720} width={1480} src={img.url} className='shadow-insetFade bg-cover lg:w-[60%]'/>
                            )})}
 
                         </div>

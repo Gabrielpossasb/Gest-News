@@ -5,6 +5,7 @@ interface PaginationProps {
    registersPerPage ? : number;
    currentPage ? : number;
    onPageChange : (page: number) => void;
+   positionTop: boolean;
 }
 
 const siblingsCount = 2;
@@ -21,7 +22,8 @@ export function Pagination({
    totalCountOfRegisters,
    registersPerPage = 10,
    currentPage = 3,
-   onPageChange
+   onPageChange,
+   positionTop
 }: PaginationProps) {
    const lastPage = Math.floor(totalCountOfRegisters / registersPerPage);
 
@@ -34,8 +36,8 @@ export function Pagination({
       : []
 
    return(
-      <div className="flex gap-5 justify-center mt-10 items-center text-gray-800">
-         <div className="flex gap-4 text-red-600 font-semibold items-center">
+      <div className={`flex gap-5 justify-center overflow-hidden w-full max-w-3xl items-center text-gray-800  shadow-boxSm rounded-full `}>
+         <div className={`flex gap-4 p-8 w-full justify-center text-red-600 font-semibold items-center shadow-smInsetFadeRed`}>
 
             { currentPage > (1 + siblingsCount) && (
                <>

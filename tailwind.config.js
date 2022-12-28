@@ -14,6 +14,7 @@ module.exports = {
         }
       },
       boxShadow: {
+        'smInsetFadeRed': 'inset -1px -8px 4px #e75757',
         'insetFade': 'inset 0 0 20px 10px #0c0c0c',
         'boxSmInset': 'inset 1px 2px 3px 1px #831111',
         'boxSm': '2px 3px 8px 1px #adadad',
@@ -25,6 +26,21 @@ module.exports = {
         'bottomShade': '0 2px 6px #b91313de',
       }
     },
+    screens: {
+      'sm': '640px',
+
+      'md': '768px',
+
+      'lg': '1024px',
+
+      'xl': '1280px',
+
+      '2xl': '1536px',
+      
+      'cel': {'max': '639px'},
+    },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 }

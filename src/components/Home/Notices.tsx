@@ -67,15 +67,17 @@ export default function Notices({data}: NoticiesData) {
 	])
 
   	return (
-    	<>
+    	<div className="flex flex-col items-center mt-8 m-4">
+
 		<Pagination 
 			totalCountOfRegisters={data?.num_results}
 			currentPage={pagination}
 			onPageChange={(e) => setPagination(e)} 
 			registersPerPage={10}
+			positionTop={true}
 		/>
 
-  		<div className='flex flex-col gap-14   sm:grid sm:grid-cols-2 sm:gap-28 mt-10'>
+  		<div className='flex flex-col gap-14 sm:grid sm:grid-cols-2 2xl:grid-cols-3 sm:gap-28 my-10'>
 			{ data?.results?.map((val, index) => { 
 
 				let open = noticeOpen.map((noticeVal,noticeIndex) => {
@@ -84,7 +86,7 @@ export default function Notices({data}: NoticiesData) {
 
 				return ( index < pagination * 10 && (index >= (pagination * 10) - 10)) && (
 
-				<div className={`flex flex-col relative gap-4 pb-8 items-center shadow-boxCard rounded-xl group hover:shadow-boxRed bg-gray-50 duration-300 overflow-hidden ${ open[index] ? 'max-h-[900px] duration-1000' : 'max-h-[300px] '}`} key={index}>
+				<div className={`flex flex-col max-w-xl relative gap-4 pb-8 items-center shadow-boxCard rounded-xl group hover:shadow-boxRed bg-gray-50 duration-300 overflow-hidden ${ open[index] ? 'max-h-[900px] duration-1000' : 'max-h-[300px] '}`} key={index}>
 					<text className='absolute left-2 top-2 text-gray-50 font-bold px-2 duration-300 rounded-full group-hover:bg-red-400 bg-red-600/80 shadow-boxSmInset'>{index + 1}</text>
 					
 					<text className='text-xl text-center p-4 px-10 w-full bg-red-700 text-gray-50 font-semibold shadow-bottomShade'>{val.title}</text>
@@ -133,6 +135,14 @@ export default function Notices({data}: NoticiesData) {
 			)})}
 		</div>
 
-      </>
+		<Pagination 
+			totalCountOfRegisters={data?.num_results}
+			currentPage={pagination}
+			onPageChange={(e) => setPagination(e)} 
+			registersPerPage={10}
+			positionTop={false}
+		/>
+
+   	</div>
    )
 } 
