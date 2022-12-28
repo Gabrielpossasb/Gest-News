@@ -56,7 +56,7 @@ export default function Carroussel({data}: NoticiesData) {
                   { data.results.map((val, index) => { return index <= 8 && (
                      <div key={index} className={`keen-slider__slide number-slide${index + 1}`}>
 
-                        <div className='flex flex-col lg:flex-row flex-1 z-20 rounded-xl overflow-hidden shadow-box m-8 max-h-[400px] sm:max-h-[600px]'>
+                        <div className='flex flex-col lg:flex-row flex-1 z-20 rounded-xl overflow-hidden shadow-box m-8 h-[400px] max-h-[400px] sm:h-[500px] sm:max-h-[550px]'>
                            
                            <div className='flex flex-col lg:w-[40%] items-center shadow-redShadeRight z-20'>
                               <text className='text-xl text-center p-4 px-10 w-full bg-red-700 text-gray-50 font-semibold shadow-bottomShade'>{val.title}</text>
