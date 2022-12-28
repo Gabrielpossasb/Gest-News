@@ -14,7 +14,7 @@ module.exports = {
         }
       },
       boxShadow: {
-        'smInsetFadeRed': 'inset -1px -8px 4px #f09f9f',
+        'smInsetFadeRed': 'inset -1px -8px 4px #da8484',
         'insetFade': 'inset 0 0 20px 10px #0c0c0c',
         'boxSmInset': 'inset 1px 2px 3px 1px #831111',
         'boxSm': '2px 3px 8px 1px #adadad',
