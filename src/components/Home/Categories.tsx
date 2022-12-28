@@ -21,13 +21,13 @@ export default function Categories({categorySelect, setCategorySelect}: Category
 
    return (
       <div className={`flex gap-6 p-6 sm:pl-10 justify-center w-full relative items-start overflow-hidden duration-700 transition-all shadow-boxSm border-b-4 rounded-3xl border-gray-400/50 
-         ${openCategories?'h-80' :'h-28 2xl:h-24'}
+         ${openCategories?'h-80' :'h-24'}
       `}>
          <button onClick={() => setOpenCategories(!openCategories)} className='p-2 shadow-boxSm rounded-full hover:brightness-75 group duration-500 bg-red-600 text-xl font-semibold text-gray-50 '>
             <FiChevronRight size={36} className={` duration-300 ${openCategories?'rotate-90':'hover:rotate-12'}`}/>
          </button>
-         <div className={`flex-wrap flex items-start gap-6 p-2 pr-4 h-full 2xl:h-auto overflow-scroll
-            ${openCategories?'scrollbar-thin scrollbar-thumb-red-700/50 scrollbar-track-gray-300 scrollbar-corner-inherit':''}
+         <div className={`flex-wrap flex items-start gap-6 p-2 pr-4 h-full 2xl:h-auto 
+            ${openCategories?'overflow-scroll scrollbar-thin scrollbar-thumb-red-700/50 scrollbar-track-gray-300 scrollbar-corner-inherit':''}
          `}>
          { category.map(val => (
             <button key={val} onClick={() => selectCategory(val)} 
