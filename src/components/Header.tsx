@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <header className='flex justify-between gap-4 sm:gap-20 p-2 px-4 relative md:px-20 bg-red-600 items-center shadow-redShade'>
           
-          { isDesktop ? (
+          { !isDesktop ? (
               <Image src={LogoMarca} width='180' height='80' alt='' className='flex'/>
             ) : (
               <Image src={LogoMarcaIcon} width='60' height='60' alt='' className='flex'/>
