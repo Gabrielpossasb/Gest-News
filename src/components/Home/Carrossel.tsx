@@ -56,24 +56,30 @@ export default function Carroussel({data}: NoticiesData) {
                   { data.results.map((val, index) => { return index <= 8 && (
                      <div key={index} className={`keen-slider__slide number-slide${index + 1}`}>
 
-                        <div className='flex flex-col lg:flex-row flex-1 z-20 rounded-xl overflow-hidden shadow-box m-8 h-[400px] max-h-[400px] sm:h-[500px] sm:max-h-[550px]'>
+                        <div className='flex flex-col items-center lg:flex-row flex-1 z-20 rounded-xl overflow-hidden shadow-box m-8 h-[400px] max-h-[460px] sm:h-[500px] sm:max-h-[550px]'>
                            
-                           <div className='flex flex-col lg:w-[40%] items-center shadow-redShadeRight z-20'>
+                           <div className='flex flex-col lg:w-[40%] w-full h-full items-center justify-center shadow-redShadeRight z-20'>
                               <text className='text-xl text-center p-4 px-10 w-full bg-red-700 text-gray-50 font-semibold shadow-bottomShade'>{val.title}</text>
                               
                               { isDesktop && (
-                                 <text className='font-medium text-gray-800 px-8 my-6'>{val.abstract}</text>
+                                 <text className='font-medium text-gray-800 m-6'>{val.abstract}</text>
                               )}
                               
-                              <Link href={val.url} target={'_blank'} className='hover:bg-gray-100/60 text-gray-400 p-2 flex gap-2 items-center px-6 mt-auto m-6 mr-auto rounded-full text-center duration-300 hover:text-red-600 font-semibold underline underline-offset-4'>
+                              <Link href={val.url} target={'_blank'} className='hover:bg-gray-100/60 m-6 text-gray-400 p-2 flex gap-2 items-center px-6 sm:mt-auto sm:mr-auto rounded-full text-center duration-300 hover:text-red-600 font-semibold underline underline-offset-4'>
                                  Link da Reportagen
                                  <FiArrowRightCircle size={20}/>
                               </Link>
                            </div>
 
-                           { val.multimedia?.map((img, imgIndex) => { return imgIndex === 0 && (
-                              <Image key={index} alt={img.caption} height={720} width={1480} src={img.url} className='shadow-insetFade bg-cover lg:w-[60%]'/>
-                           )})}
+                           {  isDesktop ? (
+                              val.multimedia?.map((img, imgIndex) => { return imgIndex === 0 && (
+                                 <Image key={index} alt={img.caption} height={620} width={1280} src={img.url} className='shadow-insetFade bg-contain lg:w-[60%]'/>
+                              )})
+                           ) : (
+                              val.multimedia?.map((img, imgIndex) => { return imgIndex === 1 && (
+                                 <Image key={index} alt={img.caption} height={300} width={600} src={img.url} className='shadow-insetFade bg-contain lg:w-[60%]'/>
+                              )})
+                           )}
 
                         </div>
                      </div>

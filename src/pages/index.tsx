@@ -75,7 +75,7 @@ export default function Home() {
         
         <Header/>
 
-        <div className='flex flex-col items-center gap-10 sm:px-20 py-10'>
+        <div className='flex flex-col items-center gap-10 lg:px-20 py-10'>
           
           <Carroussel data={noticies.data}/>
 

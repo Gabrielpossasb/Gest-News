@@ -69,6 +69,8 @@ export default function Notices({data}: NoticiesData) {
   	return (
     	<div className="flex flex-col items-center mt-8 m-4">
 
+		<text className="font-bold my-8 text-4xl text-red-400 underline underline-offset-8">-  NEWS  -</text>
+
 		<Pagination 
 			totalCountOfRegisters={data?.num_results}
 			currentPage={pagination}
