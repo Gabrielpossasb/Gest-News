@@ -16,7 +16,7 @@
 - Next.js
 - Vercel
 - Figma
-- Api de Notícias do Governo --> :link: <https://servicodados.ibge.gov.br/api/docs/noticias?versao=3> :link:
+- Api Top Stories do jornal New York Times --> :link: <https://developer.nytimes.com/docs/top-stories-product/1/overview> :link:
 
 ## :rocket: Bibliotecas :
 
