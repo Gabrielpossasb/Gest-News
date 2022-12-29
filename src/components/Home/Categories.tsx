@@ -20,8 +20,10 @@ export default function Categories({categorySelect, setCategorySelect}: Category
    }
 
    return (
-      <div className="flex flex-col gap-8 items-center">
-         <strong className="text-4xl text-red-500 font-[jura] underline underline-offset-8">{'-  CATEGORIES  -'}</strong>
+      <div className="flex flex-col gap-8 items-center" id={'categories'}>
+         <strong className="text-4xl text-red-500 font-[jura]">{'-  CATEGORIES  -'}</strong>
+
+         <div className='flex h-3 w-64 shadow-shadeDark bg-red-400 rounded-full'></div>
 
          <div className={`flex gap-6 p-6 sm:pl-10 justify-center w-full relative items-start overflow-hidden duration-700 transition-all shadow-boxSm border-b-4 rounded-3xl border-gray-400/50 
             ${openCategories?'h-80' :'h-24'}

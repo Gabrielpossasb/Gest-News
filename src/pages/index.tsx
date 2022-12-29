@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Categories from '../components/Home/Categories';
 import Notices from '../components/Home/Notices';
 import Carroussel from '../components/Home/Carrossel';
+import Foot from '../components/Foot';
 
  export interface NoticiesData {
   data: {
@@ -75,14 +76,17 @@ export default function Home() {
         
         <Header/>
 
-        <div className='flex flex-col items-center gap-10 lg:px-20 py-10'>
+        <div className='flex flex-col items-center gap-32 lg:px-20 py-10 scroll-smooth'>
           
           <Carroussel data={noticies.data}/>
 
           <Categories setCategorySelect={(category) => handleCategory(category)} categorySelect={categorySelect}/>
 
           <Notices data={noticies.data}/>
+
         </div>
+
+        <Foot/>
       </div>
     </>
   )

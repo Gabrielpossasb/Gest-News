@@ -10,6 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: Jura, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {

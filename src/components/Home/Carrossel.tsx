@@ -51,7 +51,7 @@ export default function Carroussel({data}: NoticiesData) {
    return (
       <>
          { (!!data) ? (
-            <div className='flex w-full max-w-7xl '>
+            <div className='flex w-full max-w-7xl ' id={'home'}>
                <div ref={sliderRef} className="keen-slider">
                   { data.results.map((val, index) => { return index <= 8 && (
                      <div key={index} className={`keen-slider__slide number-slide${index + 1}`}>

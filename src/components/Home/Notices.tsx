@@ -67,9 +67,11 @@ export default function Notices({data}: NoticiesData) {
 	])
 
   	return (
-    	<div className="flex flex-col items-center mt-8 m-4">
+    	<div className="flex flex-col items-center m-4 gap-8 mb-20" id={'news'}>
 
-		<strong className="font-bold my-8 text-4xl font-[jura] text-red-500 underline underline-offset-8">-  NEWS  -</strong>
+		<strong className="font-bold text-4xl font-[jura] text-red-500">-  NEWS  -</strong>
+
+		<div className='flex h-3 w-64 shadow-shadeDark bg-red-400 rounded-full'></div>
 
 		<Pagination 
 			totalCountOfRegisters={data?.num_results}

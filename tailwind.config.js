@@ -16,11 +16,13 @@ module.exports = {
           '300': '#f18989',
           '400': '#BA4242',
           '500': '#C73232',
+          '600': '#A13131',
           '800': '#802e2e',
         }
       },
       boxShadow: {
         'smInsetFadeRed': 'inset -1px -4px 6px #da8484',
+        'insetFoot': 'inset 2px 2px 4px #00000040',
         'insetFade': 'inset 0 0 20px 10px #0c0c0c',
         'boxSmInset': 'inset 1px 2px 3px 1px #831111',
         'boxSm': '2px 3px 8px 1px #adadad',
@@ -30,6 +32,8 @@ module.exports = {
         'redShade': '0 0 6px 3px #db5454',
         'redShadeRight': '100px 0px 120px 60px #882929bd',
         'bottomShade': '0 2px 6px #b91313de',
+        'shadeDark': '4px 4px 6px 2px #00000040',
+        'shadeDarkHover': '0 0 10px 8px #812525dc',
       }
     },
     screens: {

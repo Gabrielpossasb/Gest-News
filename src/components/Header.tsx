@@ -9,29 +9,30 @@ import LogoMarcaIcon from '../../public/Logo.png';
 
 export default function Header() {
 
-  const isDesktop = useMediaQuery({ query: '(min-width: 640px)'})
+  const isDesktop = useMediaQuery({ query: '(min-width: 1100px)'})
 
   return (
-    <header className='flex justify-between gap-4 sm:gap-20 p-2 px-4 relative md:px-20 bg-red-400 items-center shadow-redShade'>
+    <header className='flex justify-center gap-6 sm:gap-16 h-20 px-4 relative md:px-20 bg-red-400 items-center shadow-redShade'>
           
           { isDesktop && (
-              <Image src={LogoMarca} width='180' height='80' alt='' className='flex'/>
-          )}
-          { !isDesktop && (
-              <Image src={LogoMarcaIcon} width='60' height='60' alt='' className='flex'/>
-          )}
-
+              <Image src={LogoMarca} width='180' height='80' alt='' className='flex absolute left-20'/>
+          )}         
           
-          <button className='flex p-1 px-6 text-5xl font-bold font-[jura] text-gray-50 hover:bg-red-800 duration-300 rounded-full'>
-            Home
-            
-          </button>
+          <a href='#categories' className='flex p-1 px-2 h-full text-lg w-36 sm:text-2xl items-center justify-center font-bold font-[jura] hover:bg-red-600/30 bg-red-400 
+            border-b-8 hover:shadow-insetFoot border-transparent hover:border-red-600 duration-300 text-gray-50
+          '>
+            Categories    
+          </a>   
 
-          <Link href={'https://www.nytimes.com/'} target={'_blank'} className='flex cel:w-32 w-44 p-2 text-center text-xs realive self-end font-semibold text-gray-50 hover:underline duration-300 rounded-full'>
-            {'Copyright (c) 2022 The New York Times Company. All Rights Reserved.'}
-            
-          </Link>
-          
+          <a href='#home' className='flex p-1 px-6 h-full items-center  text-3xl sm:text-4xl font-bold justify-center  font-[jura] bg-red-400 hover:bg-red-600/30 text-gray-50 duration-300 border-b-8 hover:shadow-insetFoot border-transparent hover:border-red-600'>
+            Home    
+          </a>    
+
+          <a href='#news' className='flex p-1 px-2 h-full w-36 text-lg sm:text-2xl items-center justify-center font-bold font-[jura] hover:bg-red-600/30 bg-red-400 
+            border-b-8 hover:shadow-insetFoot border-transparent hover:border-red-600 duration-300 text-gray-50
+          '>
+            News    
+          </a>      
       </header>
    )
 }
