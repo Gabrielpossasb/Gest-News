@@ -59,13 +59,13 @@ export default function Carroussel({data}: NoticiesData) {
                         <div className='flex flex-col items-center lg:flex-row flex-1 z-20 rounded-xl overflow-hidden shadow-box m-8 h-[400px] max-h-[460px] sm:h-[500px] sm:max-h-[550px]'>
                            
                            <div className='flex flex-col lg:w-[40%] w-full h-full items-center justify-center shadow-redShadeRight z-20'>
-                              <text className='text-xl text-center p-4 px-10 w-full bg-red-700 text-gray-50 font-semibold shadow-bottomShade'>{val.title}</text>
+                              <strong className='text-xl text-center p-4 px-10 w-full bg-red-400 text-gray-50 font-semibold shadow-bottomShade'>{val.title}</strong>
                               
                               { isDesktop && (
-                                 <text className='font-medium text-gray-800 m-6'>{val.abstract}</text>
+                                 <text className='font-semibold text-gray-800 m-6'>{val.abstract}</text>
                               )}
                               
-                              <Link href={val.url} target={'_blank'} className='hover:bg-gray-100/60 m-6 text-gray-400 p-2 flex gap-2 items-center px-6 sm:mt-auto sm:mr-auto rounded-full text-center duration-300 hover:text-red-600 font-semibold underline underline-offset-4'>
+                              <Link href={val.url} target={'_blank'} className='hover:bg-gray-100/60 m-6 text-gray-400 p-2 flex gap-2 items-center px-6 sm:mt-auto sm:mr-auto rounded-full text-center duration-300 hover:text-red-600 font-bold underline underline-offset-4'>
                                  Link da Reportagen
                                  <FiArrowRightCircle size={20}/>
                               </Link>
