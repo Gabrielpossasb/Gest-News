@@ -69,7 +69,7 @@ export default function Notices({data}: NoticiesData) {
   	return (
     	<div className="flex flex-col items-center m-4 gap-8 mb-20" id={'news'}>
 
-		<strong className="font-bold text-4xl font-[jura] text-red-500">-  NEWS  -</strong>
+		<strong className="font-bold text-4xl font-[jura] text-red-500 text-shadow-md">-  NEWS  -</strong>
 
 		<div className='flex h-3 w-64 shadow-shadeDark bg-red-400 rounded-full'></div>
 
@@ -124,7 +124,7 @@ export default function Notices({data}: NoticiesData) {
 							? {open:!noticeVal.open} 
 							: noticeVal
 						}))} 
-							className='flex gap-2 mt-4 w-36 p-1 px-4 absolute bottom-2 bg-gray-50 rounded-full items-center font-bold text-red-500 hover:bg-gray-100 duration-300'
+							className='flex gap-2 mt-4 w-36 p-1 px-4 absolute bottom-2 bg-gray-50 rounded-full items-center font-bold text-red-500 hover:text-gray-50 hover:bg-red-400 duration-500'
 						>
 							{ !open[index] ? (
 								'View more'

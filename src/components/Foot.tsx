@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import LogoMarcaIcon from '../../public/Logo.png';
 import Link from "next/link";
-import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io";
 
 export default function Foot() {
 
@@ -18,17 +18,17 @@ export default function Foot() {
             </div>
 
             <Link href={'https://www.linkedin.com/in/gabriel-possas/'} rel='noreferrer' target='_blank'
-               className="bg-red-600 p-3 rounded-full text-white shadow-shadeDark hover:shadow-shadeDarkHover
-               hover:bg-red-200 hover:text-red-600 duration-500
+               className="bg-red-600 p-2 rounded-full text-white shadow-shadeDark hover:shadow-shadeDarkHover
+               hover:bg-red-200 hover:text-red-600 duration-700
             ">
-               <FiLinkedin size={26}/>
+               <IoLogoLinkedin size={36}/>
             </Link>
 
             <Link href={'https://github.com/Gabrielpossasb'} rel='noreferrer' target='_blank'
-               className="bg-red-600 p-3 rounded-full text-white shadow-shadeDark hover:shadow-shadeDarkHover
-               hover:bg-red-200 hover:text-red-600 duration-500
+               className="bg-red-600 p-2 rounded-full text-white shadow-shadeDark hover:shadow-shadeDarkHover
+               hover:bg-red-200 hover:text-red-600 duration-700
             ">
-               <FiGithub size={26}/>
+               <IoLogoGithub size={36}/>
             </Link>
          </div>
 
@@ -36,7 +36,7 @@ export default function Foot() {
 
          <Link href={'https://www.nytimes.com/'} target={'_blank'} 
             className='flex shadow-shadeDark bg-red-600 cel:w-32 w-52 p-2 lg:absolute lg:right-20 text-center text-xs realive 
-            font-bold text-gray-50 hover:underline rounded-2xl hover:shadow-shadeDarkHover hover:bg-red-200 hover:text-red-600 duration-500
+            font-bold text-gray-50 hover:underline rounded-2xl hover:shadow-shadeDarkHover hover:bg-red-200 hover:text-red-600 duration-700
          '>
             {'Copyright (c) 2022 The New York Times Company. All Rights Reserved.'}
           </Link>

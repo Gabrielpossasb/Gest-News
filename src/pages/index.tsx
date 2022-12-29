@@ -40,6 +40,8 @@ export default function Home() {
 
   const [categorySelect, setCategorySelect ] = useState('home')
 
+  const [ loading, setLoading ] = useState(false)
+
   useEffect(() => {
     const apiRe = async () => {
       const response = await api.post(`/api/source`, {
@@ -55,14 +57,16 @@ export default function Home() {
   }, [])
 
   async function handleCategory(category:string) {
+    setLoading(true)
     const response = await api.post(`/api/source`, {
       headers: {
         category: category
       }
     })
-
+    
     setNoticies(response.data)
     setCategorySelect(category)
+    setLoading(false)
   }
   
   return (
@@ -80,7 +84,7 @@ export default function Home() {
           
           <Carroussel data={noticies.data}/>
 
-          <Categories setCategorySelect={(category) => handleCategory(category)} categorySelect={categorySelect}/>
+          <Categories setCategorySelect={(category) => handleCategory(category)} categorySelect={categorySelect} loading={loading}/>
 
           <Notices data={noticies.data}/>
 
