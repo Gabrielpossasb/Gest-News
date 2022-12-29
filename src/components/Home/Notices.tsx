@@ -79,7 +79,7 @@ export default function Notices({data}: NoticiesData) {
 			positionTop={true}
 		/>
 
-  		<div className='flex flex-col gap-14 sm:grid font-bold sm:grid-cols-2 2xl:grid-cols-3 sm:gap-28 my-10'>
+  		<div className='flex flex-col gap-14 sm:grid font-bold sm:grid-cols-2 2xl:grid-cols-3 sm:gap-28 my-20'>
 			{ data?.results?.map((val, index) => { 
 
 				let open = noticeOpen.map((noticeVal,noticeIndex) => {
@@ -89,9 +89,9 @@ export default function Notices({data}: NoticiesData) {
 				return ( index < pagination * 10 && (index >= (pagination * 10) - 10)) && (
 
 				<div className={`flex flex-col max-w-xl relative gap-4 pb-8 items-center shadow-boxCard rounded-xl group hover:shadow-boxRed bg-gray-50 duration-300 overflow-hidden ${ open[index] ? 'max-h-[900px] duration-1000' : 'max-h-[300px] '}`} key={index}>
-					<text className='absolute left-2 top-2 text-gray-50 font-bold px-2 duration-500 rounded-full group-hover:bg-red-300 bg-red-500/80 shadow-boxSmInset'>{index + 1}</text>
+					<text className='absolute left-2 top-2 text-gray-50 font-bold px-2 duration-500 rounded-full group-hover:bg-red-300 bg-red-400/80 shadow-boxSmInset'>{index + 1}</text>
 					
-					<text className='text-xl text-center p-4 px-10 w-full bg-red-500 text-gray-50 font-bold shadow-bottomShade'>{val.title}</text>
+					<text className='text-xl text-center p-4 px-10 w-full bg-red-400 text-gray-50 font-bold shadow-bottomShade'>{val.title}</text>
 					
 					{ val.multimedia?.map((img, imgIndex) => { return imgIndex === 1 && (
 						<Image key={index} width={500} height={300} alt={img.caption} src={img.url} className='w-full duration-500 shadow-box group-hover:shadow-redShade h-[300px]'/>
