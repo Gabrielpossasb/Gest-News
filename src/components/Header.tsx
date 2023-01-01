@@ -18,7 +18,7 @@ export default function Header() {
               <Image src={LogoMarca} width='180' height='80' alt='' className='flex absolute left-20'/>
           )}         
           
-          <a href='#categories' className='flex p-1 px-2 h-full text-lg w-36 sm:text-2xl items-center justify-center font-bold font-[jura] hover:bg-red-600/30 bg-red-400 
+          <a href='#categories' className='flex p-1 px-4 h-full text-lg sm:text-2xl items-center justify-center font-bold font-[jura] hover:bg-red-600/30 bg-red-400 
             border-b-8 hover:shadow-insetFoot border-transparent hover:border-red-600 duration-300 text-gray-50
           '>
             Categories    
@@ -28,7 +28,7 @@ export default function Header() {
             Home    
           </a>    
 
-          <a href='#news' className='flex p-1 px-2 h-full w-36 text-lg sm:text-2xl items-center justify-center font-bold font-[jura] hover:bg-red-600/30 bg-red-400 
+          <a href='#news' className='flex p-1 px-6 h-full text-lg sm:text-2xl items-center justify-center font-bold font-[jura] hover:bg-red-600/30 bg-red-400 
             border-b-8 hover:shadow-insetFoot border-transparent hover:border-red-600 duration-300 text-gray-50
           '>
             News    

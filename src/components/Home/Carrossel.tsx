@@ -51,12 +51,12 @@ export default function Carroussel({data}: NoticiesData) {
    return (
       <>
          { (!!data) ? (
-            <div className='flex w-full max-w-7xl ' id={'home'}>
+            <div className='flex w-full' id={'home'}>
                <div ref={sliderRef} className="keen-slider">
                   { data.results.map((val, index) => { return index <= 8 && (
                      <div key={index} className={`keen-slider__slide number-slide${index + 1}`}>
 
-                        <div className='flex flex-col items-center lg:flex-row flex-1 z-20 rounded-xl overflow-hidden shadow-box m-8 h-[400px] max-h-[460px] sm:h-[500px] sm:max-h-[550px]'>
+                        <div className='flex flex-col items-center lg:flex-row flex-1 z-20 rounded-xl overflow-hidden shadow-box m-8 h-[400px] max-h-[460px] sm:h-[500px] sm:max-h-[650px]'>
                            
                            <div className='flex flex-col lg:w-[40%] w-full h-full items-center justify-center shadow-redShadeRight z-20'>
                               <strong className='text-xl text-center p-4 px-10 w-full bg-red-400 text-gray-50 font-semibold shadow-bottomShade'>{val.title}</strong>
@@ -73,7 +73,7 @@ export default function Carroussel({data}: NoticiesData) {
 
                            {  isDesktop ? (
                               val.multimedia?.map((img, imgIndex) => { return imgIndex === 0 && (
-                                 <Image key={index} alt={img.caption} height={620} width={1280} src={img.url} className='shadow-insetFade bg-contain lg:w-[60%]'/>
+                                 <Image key={index} alt={img.caption} height={520} width={1480} src={img.url} className='shadow-insetFade bg-contain lg:w-[60%]'/>
                               )})
                            ) : (
                               val.multimedia?.map((img, imgIndex) => { return imgIndex === 1 && (

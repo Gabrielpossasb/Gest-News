@@ -76,11 +76,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='flex flex-col w-full'>
+      <div className='flex flex-col w-full '>
         
         <Header/>
 
-        <div className='flex flex-col items-center gap-32 lg:px-20 py-10 scroll-smooth'>
+        <div className='flex flex-col items-center gap-32 lg:px-20 py-10 scroll-smooth '>
           
           <Carroussel data={noticies.data}/>
 
