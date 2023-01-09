@@ -33,7 +33,7 @@ export default function Categories({categorySelect, setCategorySelect, loading}:
                <FiChevronRight size={36} className={` duration-300 ${openCategories?'rotate-90':'hover:rotate-12'}`}/>
             </button>
 
-            <div className={`flex-wrap flex items-start justify-center gap-6 px-6 h-full 2xl:h-auto 
+            <div className={`flex-wrap flex items-start justify-center gap-6 pb-2 px-6 h-full 2xl:h-auto 
                ${openCategories?'overflow-scroll scrollbar-thin scrollbar-thumb-red-700/50 scrollbar-track-gray-300 scrollbar-corner-inherit':''}
             `}>
             { category.map(val => (

@@ -73,11 +73,11 @@ export default function Carroussel({data}: NoticiesData) {
 
                            {  isDesktop ? (
                               val.multimedia?.map((img, imgIndex) => { return imgIndex === 0 && (
-                                 <Image key={index} alt={img.caption} height={520} width={1480} src={img.url} className='shadow-insetFade bg-contain lg:w-[60%]'/>
+                                 <Image key={index} alt={img.caption} height={520} width={1480} src={img.url} className='shadow-insetFade bg-contain h-auto lg:w-[60%]'/>
                               )})
                            ) : (
                               val.multimedia?.map((img, imgIndex) => { return imgIndex === 1 && (
-                                 <Image key={index} alt={img.caption} height={300} width={600} src={img.url} className='shadow-insetFade bg-contain lg:w-[60%]'/>
+                                 <Image key={index} alt={img.caption} height={300} width={600} src={img.url} className='shadow-insetFade bg-contain h-auto lg:w-[60%]'/>
                               )})
                            )}
 

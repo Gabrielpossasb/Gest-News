@@ -15,7 +15,7 @@ export default function Header() {
             <Image src={LogoMarca} width='180' height='80' alt='' className='flex absolute left-10'/>
          )}         
          
-         <a href='#categories' className='flex p-1 px-4 max-w-[100px] cel:text-base h-full text-lg md:text-2xl items-center justify-center font-bold font-[jura] hover:bg-red-600/30 bg-red-400 border-b-8 hover:shadow-insetFoot border-transparent hover:border-red-600 duration-300 text-gray-50
+         <a href='#categories' className='flex p-1 px-4 cel:max-w-[110px] cel:text-base h-full text-lg md:text-2xl items-center justify-center font-bold font-[jura] hover:bg-red-600/30 bg-red-400 border-b-8 hover:shadow-insetFoot border-transparent hover:border-red-600 duration-300 text-gray-50
          '>
             Categories    
          </a>   
@@ -24,8 +24,8 @@ export default function Header() {
             Home    
          </a>    
 
-         <div className='min-w-[100px] h-full flex items-center justify-start'>
-            <a href='#news' className='flex p-1 px-4 h-full cel:text-base text-lg md:text-2xl items-center justify-center font-bold font-[jura] hover:bg-red-600/30 bg-red-400 border-b-8 hover:shadow-insetFoot border-transparent hover:border-red-600 duration-300 text-gray-50
+         <div className='min-w-[100px] min-w-[100px] h-full flex items-center justify-start'>
+            <a href='#news' className='flex p-1 px-2 sm:px-4 h-full cel:text-base text-lg md:text-2xl items-center justify-center font-bold font-[jura] hover:bg-red-600/30 bg-red-400 border-b-8 hover:shadow-insetFoot border-transparent hover:border-red-600 duration-300 text-gray-50
             '>
                News    
             </a>
