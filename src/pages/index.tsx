@@ -58,6 +58,7 @@ export default function Home() {
 
   async function handleCategory(category:string) {
     setLoading(true)
+    setCategorySelect(category)
     const response = await api.post(`/api/source`, {
       headers: {
         category: category
@@ -65,7 +66,6 @@ export default function Home() {
     })
     
     setNoticies(response.data)
-    setCategorySelect(category)
     setLoading(false)
   }
   

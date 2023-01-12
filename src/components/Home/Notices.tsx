@@ -109,7 +109,7 @@ export default function Notices({data}: NoticiesData) {
 
 						<div className='flex w-full justify-between items-center mt-auto text-gray-400'>
 							<Link href={val.url} target={'_blank'} className='hover:bg-gray-100 p-2 flex gap-2 items-center px-4 rounded-full text-center duration-300 hover:text-red-500 font-semibold underline underline-offset-4'>
-								Link to Notice
+								Link to the news
 								<FiArrowRightCircle size={20}/>
 							</Link>
 

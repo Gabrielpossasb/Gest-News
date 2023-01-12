@@ -13,10 +13,10 @@ export default function Categories({categorySelect, setCategorySelect, loading}:
 
    const [ openCategories, setOpenCategories ] = useState(false)
    
-   function selectCategory(id:string) {
-      setCategorySelect(id)
-      let backupCategory: string[] = category.filter(val => val !== id)
-      backupCategory.unshift(id)
+   async function selectCategory(name:string) {
+      await setCategorySelect(name)
+      let backupCategory: string[] = category.filter(val => val !== name)
+      backupCategory.unshift(name)
       setCaregory(backupCategory)
    }
 
@@ -42,13 +42,20 @@ export default function Categories({categorySelect, setCategorySelect, loading}:
                   font-semibold duration-500 enabled:hover:border-red-600 text-center transition-all shadow-boxSm
                   ${categorySelect===val?'bg-red-500 border-red-500 text-gray-50':'relative text-gray-400'}
                `}>
-                  { loading ? (
+                  { ( loading && categorySelect === val ) ? (
                      <div className="flex items-center justify-center ">
                         <div className={`w-6 h-6 border-y-2 rounded-full animate-spin ${categorySelect===val?'border-white':'border-red-500'}`}></div>
                      </div>
-                  ): (
-                     val.charAt(0).toUpperCase() + val.slice(1)
-                  )}
+                  ) : (val === 'us') ? (
+                        'US'
+                     ) : (val === 'sundayreview') ? (
+                        'Sunday Review'
+                     ) : (val === 'nyregion') ? (
+                        'NY Region'
+                     ) : (
+                        val.charAt(0).toUpperCase() + val.slice(1)
+                     )
+                  }
                </button>
             ))
             }

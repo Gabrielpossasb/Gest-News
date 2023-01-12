@@ -66,7 +66,7 @@ export default function Carroussel({data}: NoticiesData) {
                               )}
                               
                               <Link href={val.url} target={'_blank'} className='hover:bg-gray-100/60 m-6 text-gray-400 p-2 flex gap-2 items-center px-6 sm:mt-auto sm:mr-auto rounded-full text-center duration-300 hover:text-red-600 font-bold underline underline-offset-4'>
-                                 Link da Reportagen
+                                 Link to the news
                                  <FiArrowRightCircle size={20}/>
                               </Link>
                            </div>
