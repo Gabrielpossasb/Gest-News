@@ -4,7 +4,7 @@
    
    <img height='140px' src='./public/favicon.ico' alt='logo'/>
       
-   #### Portal de notícias utilizando a api do New York Times. Feito com Next.js, React.js, TypeScript, Axios ####
+   #### Portal de notícias utilizando a api do The New York Times. Feito com Next.js, React.js, TypeScript, Axios ####
 
    :link: <http://gest-news.vercel.app/> :link:
 </div>
